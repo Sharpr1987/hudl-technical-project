@@ -27,10 +27,12 @@
     <None Remove="Selenium.Support" />
     <None Remove="AutomationResources\" />
     <None Remove="Pages\" />
+    <None Remove="Tests\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Base Files\" />
     <Folder Include="AutomationResources\" />
     <Folder Include="Pages\" />
+    <Folder Include="Tests\" />
   </ItemGroup>
 </Project>
