@@ -26,9 +26,11 @@
     <None Remove="Selenium.WebDriver" />
     <None Remove="Selenium.Support" />
     <None Remove="AutomationResources\" />
+    <None Remove="Pages\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Base Files\" />
     <Folder Include="AutomationResources\" />
+    <Folder Include="Pages\" />
   </ItemGroup>
 </Project>
