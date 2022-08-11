@@ -19,13 +19,11 @@ public class LoginTests : BaseTest
     [Test]
     public void Test_Login_With_Valid_Credentials()
     {
-        var testpath = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None).FilePath;
         HomePage homePage = new HomePage(Driver);
         LoginPage loginPage = homePage.GoTo();
         loginPage.Login(_validEmail, _validPassword);
         string currentURL = homePage.GetCurrentURL();
         Assert.That(currentURL, Is.EqualTo("https://www.hudl.com/home"));
-        Console.WriteLine(testpath);
     }
 
     [Test]
