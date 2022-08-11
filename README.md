@@ -1,2 +1,14 @@
 # hudl-technical-project
-A project to test the login page at https://www.hudl.com
+<h2>Description</h2>
+This is a technical project as a part of the interview process for <a href="https://www.hudle.com">Hudle</a>. The purpose of this project is to test the login page. This is accomplished with functional tests, using combinations of valid and invalid login credentials, and security tests, testing for XSS and SQL injection.
+<br>
+<br>
+
+This project was written with C# and Selenium. While Python was the preferred language for this assignmetn I chose to use C# for two reasons. One, while I have spent more time programming with Python it has been more in the context of data analysis, and I have yet to use Python with Selenium. Two, I use C# with selenium regularly in my current job and am very comfortable with it. I am confident in my ability ot learn to use Python with Selenium, but for this project I felt it was better to showcase the skills I already possess.
+
+One of the biggest challenges was in figuring out how to secure the login credentials. I contemplated writing a script to convert the password to base64 and then having that stored as a variable that would then be converted back before being passed to the proper input field. The problem with this approach is that while the password initially seems secure the base64 password and the script to conver it back to a string would both be accessible to anyone that stumbles across this repo. All they would need to do is run the conversion script to attain the string password. I briefly contemplated encrypting the password, but seeing as the password needs to be passed to the input field as the original string I was presented with the same problem as converting to base64. I eventually settled on have a config file that would house the valid login credentials as well as the invalid login credentials. These values are then accessed by the test file where they are stored as strings. The user will need to edit the config file to enter their email and password in the config file to run the tests.
+
+<h3>How to Install and Run the Project</h3>
+This project makes use of <a href="https://chromedriver.chromium.org/home">Chromedriver</a>. At the time this project was created Google Chrome version 104 was the current version, and that is the version of chromedriver that is included with the project. If a newer version of Chrome is release please visit <a href="https://chromedriver.chromium.org/downloads">https://chromedriver.chromium.org/downloads</a> to download the appropriate chromedriver. Versions of chromedriver for both Mac and Windows have been included with this project. If chromedriver for Linux is needed please download it from the above link. 
+
+This project was created in Visual Studio 2022 using .NET core 6.0, so Visual Studio may be required to open the solution file. Once the file has been opened tests can be run from the Test Explorer or directly from the test file. If chromedriver is up to date the only thing necessary to run the files is to input valid email and password into the config file titled <i>testhost.dll.config</i>.
